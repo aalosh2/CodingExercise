@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Angular 1.x -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <link href="css/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="loginCtrl">
+        <div class="container-fluid">
+            <div class="panel panel-default" ng-hide="user">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
+                    <div ng-show="errorMessage" class="alert alert-warning">
+                        {{errorMessage}}
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="text" class="form-control" id="email" ng-model="email" placeholder="name@domain.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" ng-model="password" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="login()">Login</button>
+                </div>
+            </div>
+        </div>
+        <div ng-show="user">
+            <nav class="navbar CustomNav">
+                <div class="container">
+                    <div class="navbar-header">
+
+                        <a class="navbar-brand Logo" href="#">
+
+                            <img src="img/logo-design.png" />
+
+                            <span><b>Site</b> Name</span>
+                        </a>
+                    </div>
+
+
+                </div>
+            </nav>
+            <div class="pagewrapper">
+                <div class="container">
+                    <dic class="row">
+                        <div class="col-lg-4 col-md-4  col-sm-6  col-xs-12 ">
+                            <div class="box">
+                                <img class="userImg" src="{{user.profilePic}}" />
+                                 <hr />
+                                <h3>Welcome</h3><h4> <span class="text-default">{{user.name}}</span></h4>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-6  col-xs-12 ">
+                            <div class="box">
+
+
+                             <h3 class="pageTitle"><i class="glyphicon glyphicon-cog"></i>setting</h3>
+                                <hr />
+                                <a href="#" ng-click="newPasswordMode = true" ng-hide="newPasswordMode"><i class="glyphicon glyphicon-cog"></i> Change Password</a>
+                                <div ng-show="newPasswordMode">
+                                    <div class="form-group">
+                                        <label for="Current">Current</label>
+                                        <input type="password" class="form-control" id="Current" placeholder="Password">
+                                        <small id="emailHelp" class="form-text text-muted">Please Enter Current Password.</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="newPassword">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword" ng-model="newPassword" placeholder="New Password">
+                                        <small id="emailHelp" class="form-text text-muted">Please Enter New Password.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Re-type">Re-type new</label>
+                                        <input type="password" class="form-control" id="Re-type" placeholder="Password">
+                                        <small id="emailHelp" class="form-text text-muted">Please Re-type New Password.</small>
+                                    </div>
+
+                                    <button class="btn btn-primary">Change</button>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </dic>
+                </div>
+            </div>
+
+            <div class="navbar navbar-default navbar-fixed-bottom">
+                <div class="container">
+                    <p class="navbar-text pull-left">
+                        © 2017 - Site Built By Ali. Mo
+                        <a href="#" target="_blank">Site Url</a>
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script type="module" src="js/loginCtrl.js">
+    </script>
+</body>
+</html>

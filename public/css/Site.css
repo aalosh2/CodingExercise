@@ -1,0 +1,39 @@
+﻿body {
+}
+
+.Logo img {
+    max-width: 45px;
+    display:inline-block;
+}
+.CustomNav {
+    min-height: 75px;
+    -webkit-box-shadow: 0px 11px 25px -9px rgb(99, 163, 218);
+    -moz-box-shadow: 0px 11px 25px -9px rgb(99, 163, 218);
+    box-shadow: 0px 11px 25px -9px rgb(99, 163, 218);
+}
+
+
+.Logo span b {
+    font-size: 28px;
+    color: #ed930d;
+}
+.Logo span {
+    padding: 0px 20px;
+    font-family: unset;
+    color: #d0d0d0;
+}
+
+.box {
+    background-color: #FFF;
+    padding: 20px 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid #63a3da;
+}
+
+.userImg {
+    max-width: 100%;
+    border-radius: 100%;
+}
+.pageTitle i {
+    padding: 0px 13px 0px 0px;
+}
